@@ -5,7 +5,9 @@ const app = express();
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.send('App is running..');
+  res.status(200).json({
+    msg: 'Hello'
+  });
 });
 
 

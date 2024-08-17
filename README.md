@@ -15,12 +15,32 @@ Slack and Facebook integration
 - **Facebook App:** Create Facebook app to access pages messages by webhook url. To create a new facebook app, visit your [facebook app dashboard](https://developers.facebook.com/apps) and follow [steps](#setup-facebook-app)
 - **Slack App:** Create slack app to push messages to specified slack channel, To create a new slack app, visit your [slack app dashboard](https://api.slack.com/apps) and follow [steps](#steps-to-create-slack-app)
 
+## Server setup
 
-## Install Dependencies
+- Clone this repository on your local machine:
 
-```sh
+```bash
+git clone https://github.com/kldvp/slack-facebook-integration.git
+
+cd slack-facebook-integration
+```
+- Install dependencies
+
+```bash
 npm install
 ```
+
+- If ngrok not already installed, install via command line:
+
+```bash
+npm install -g ngrok
+```
+- Register with ngrok to activate in local machine
+- Start the ngrok tunnel service:
+```bash
+ngrok http 3000
+```
+- Copy `<ngrok-url>`
 
 ## Environment Variables
 - Copy all environment variables from `.sample.env` to `.env` and provide the appropriate values:
@@ -41,14 +61,9 @@ npm install
 7. Go to the **"Basic"** section under the **"App settings"** sub-navigation menu.
 8. Get the App Secret and set it as the value for the `FB_APP_SECRET` environment variable.
 9. Start the server:
-    - Start the ngrok tunnel service:
-      ```sh
-      ngrok http 3000
-      ```
-    - Start the server:
-      ```sh
-      npm run start
-      ```
+```sh
+npm run start
+```
 10. Select **"Messenger"** under **"Add products to your app"** and click **"Set up"**.
 11. Click **"Messenger API Settings"** under **"Messenger"**:
     - In the **"Configure Webhooks"** section:

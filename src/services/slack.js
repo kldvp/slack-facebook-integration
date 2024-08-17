@@ -1,4 +1,4 @@
-// Helper function to push messages to slack channel
+// Helper function to push messages to specified webhook url of slack channel
 async function sendMessageToSlack(message) {
     try {
         if (!message) throw new Error('Message is required');

@@ -20,7 +20,7 @@ app.use(json({ verify: verifyRequestSignature }));
 
 app.use('/fb', fbRoutes);
 
-// Respond with index file when a GET request is made to the homepage
+// Respond with hello message when a GET request is made to the homepage
 app.get("/", function (_req, res) {
     res.status(200).json({
         msg: 'hello'
